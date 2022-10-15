@@ -25,12 +25,14 @@ public class CharacterController : MonoBehaviour, Damageable
     public float dashLength = 0.5f;
     float dashCounter, dashCoolCounter;
 
+    public GameObject Shotgun;
+
     bool isColliding;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
 
@@ -74,12 +76,12 @@ public class CharacterController : MonoBehaviour, Damageable
         {
             if(canMove)
                 prevInput = val.Get<Vector2>();
-                animator.SetBool("Moving", true);
+                //animator.SetBool("Moving", true);
                 updateFacingDirection();
         }
         else
         {
-            animator.SetBool("Moving", false);
+            //animator.SetBool("Moving", false);
         }
         
     }
@@ -94,11 +96,9 @@ public class CharacterController : MonoBehaviour, Damageable
 
     }
 
-    void OnFire()
-    {
-        if (canAttack)
-        {
-            canMove = false;
+    void OnFire(){
+        if (canAttack){
+            Shotgun.GetComponent<MouseSwivel>().Fire();
         }
     }
 

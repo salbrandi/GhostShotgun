@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619f470aec03db343a529bf66469efb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startVelocity: 15
+  startVelocity: 20
   falloff: 2
   timeToLive: 0.25
   damage: 1
