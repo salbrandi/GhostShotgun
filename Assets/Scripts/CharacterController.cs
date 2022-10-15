@@ -59,6 +59,7 @@ public class CharacterController : MonoBehaviour, Damageable
                 canBeDamaged = true;
                 canMove = true;
                 canAttack = true;
+                Physics2D.IgnoreLayerCollision(7, 10, false);
             }
         }
 
@@ -92,6 +93,9 @@ public class CharacterController : MonoBehaviour, Damageable
             canMove = false;
             canAttack = false;
             canBeDamaged = false;
+            // Ignore Layer collision between player and bullets
+            // animator.setTriger("Dodging");
+            Physics2D.IgnoreLayerCollision(7, 10);
         }
 
     }

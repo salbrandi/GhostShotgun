@@ -28,10 +28,14 @@ public class ShotGunShell : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Damageable")){
-            other.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
+    void OnCollisionEnter2D(Collision2D other){
+        if(other.collider.gameObject.CompareTag("Damageable")){
+            // other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
+            Die();
+        } else if (other.collider.gameObject.CompareTag("Wall")) {
+            Die();
         }
+        
     }
 
     void Die(){
