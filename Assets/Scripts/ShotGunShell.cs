@@ -6,7 +6,7 @@ public class ShotGunShell : MonoBehaviour
 {
     public float startVelocity, falloff, timeToLive, damage;
 
-    public GameObject source;
+    public GameObject source, deathprefab;
 
     float timer;
 
@@ -50,6 +50,8 @@ public class ShotGunShell : MonoBehaviour
     }
 
     void Die(){
+        if(deathprefab != null)
+            Instantiate(deathprefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7193730673190514359}
   - component: {fileID: 7193730673190514357}
   - component: {fileID: 7193730673190514356}
-  - component: {fileID: 489632604}
+  - component: {fileID: 2443276330247631971}
   m_Layer: 6
   m_Name: barrel
   m_TagString: Wall
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7193730673190514361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.9608, y: 1.5818, z: 0.009321623}
-  m_LocalScale: {x: 2.7079, y: 2.7079, z: 2.7079}
+  m_LocalScale: {x: 0.7, y: 0.8, z: 2.7079}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 85a43441acff61d4781af26b60738304, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d1bb958d90d24042b679e8b9d67826d, type: 3}
   m_Color: {r: 0.4339623, g: 0.14254199, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.10000002
---- !u!114 &489632604
+--- !u!114 &2443276330247631971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,13 +141,13 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 0
+  m_SelfShadows: 1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.100000024, y: -0.099999994, z: 0}
-  - {x: -0.100000024, y: 0.099999964, z: 0}
-  - {x: 0.100000024, y: 0.099999964, z: 0}
-  - {x: 0.100000024, y: -0.099999994, z: 0}
-  m_ShapePathHash: 0
+  - {x: -0.49274355, y: -0.79249656, z: -2.8380631e-11}
+  - {x: -0.79710156, y: -0.49423262, z: -2.8380631e-11}
+  - {x: 0.7971609, y: -0.4967159, z: -2.8380631e-11}
+  - {x: 0.49848002, y: -0.79498047, z: -2.8380631e-11}
+  m_ShapePathHash: -1462267805
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1382844
+  m_InstanceId: -2213280

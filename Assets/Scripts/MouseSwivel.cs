@@ -7,7 +7,7 @@ using Cinemachine;
 public class MouseSwivel : MonoBehaviour
 {
 
-    public GameObject bullet;
+    public GameObject bullet, dashBullet;
     public float distanceFromParent, maxAngle, minSpeedMod, gunFloatSpeed;
     public int numProjectiles;
     public Transform objectToFollow;
@@ -43,5 +43,17 @@ public class MouseSwivel : MonoBehaviour
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var angle = mouseWorldPos - objectToFollow.transform.position;
         GetComponent<CinemachineImpulseSource>().GenerateImpulseWithVelocity(angle.normalized);
+    }
+
+    public void dashFire(int numCharges){
+        for(int i = 0; i < 5 * numCharges; i++){
+            GameObject obj = Instantiate(dashBullet, objectToFollow.transform.position, Quaternion.Euler(0, 0, 360/(numCharges * 5) * i + Random.Range(-5, 5)));
+            obj.GetComponent<ShotGunShell>().startVelocity *= Random.Range(1, minSpeedMod);
+            obj.GetComponent<ShotGunShell>().source = gameObject;
+        }
+
+        if(numCharges > 0){
+            GetComponent<CinemachineImpulseSource>().GenerateImpulseWithVelocity(Vector3.down);
+        }
     }
 }

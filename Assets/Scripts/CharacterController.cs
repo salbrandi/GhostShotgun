@@ -62,6 +62,9 @@ public class CharacterController : MonoBehaviour, Damageable
                 canMove = true;
                 canAttack = true;
                 Physics2D.IgnoreLayerCollision(7, 10, false);
+                Shotgun.GetComponent<MouseSwivel>().dashFire(soulCharge);
+                soulCharge = 0;
+
             }
         }
 
@@ -90,7 +93,7 @@ public class CharacterController : MonoBehaviour, Damageable
     }
 
     void OnDodge(){
-        if(dashCoolCounter <= 0 && dashCounter <= 0 && canMove){
+        if((dashCoolCounter <= 0 && dashCounter <= 0 && canMove) || (canMove && dashCounter <= 0 && soulCharge > 0)){
             dashCounter = dashLength;
             canMove = false;
             canAttack = false;
@@ -125,7 +128,8 @@ public class CharacterController : MonoBehaviour, Damageable
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        isColliding = true;
+        if(collision.collider.gameObject.layer == 6)
+            isColliding = true;
     }
 
     void OnCollisionExit2D(Collision2D collision){
