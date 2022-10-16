@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &7193730673190514356
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141,13 +141,17 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
   - {x: -0.49274355, y: -0.79249656, z: -2.8380631e-11}
   - {x: -0.79710156, y: -0.49423262, z: -2.8380631e-11}
+  - {x: -0.7797232, y: 0.38783997, z: 0.000000024734433}
+  - {x: -0.49495777, y: 0.7971692, z: 0.000000024734433}
+  - {x: 0.48578867, y: 0.8011186, z: 0.000000024734433}
+  - {x: 0.7863855, y: 0.39871573, z: 0.000000024734433}
   - {x: 0.7971609, y: -0.4967159, z: -2.8380631e-11}
   - {x: 0.49848002, y: -0.79498047, z: -2.8380631e-11}
-  m_ShapePathHash: -1462267805
+  m_ShapePathHash: -491353055
   m_Mesh: {fileID: 0}
   m_InstanceId: -2213280
