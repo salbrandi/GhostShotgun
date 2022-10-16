@@ -6,6 +6,8 @@ public class ShotGunShell : MonoBehaviour
 {
     public float startVelocity, falloff, timeToLive, damage;
 
+    public GameObject source;
+
     float timer;
 
     Rigidbody2D rb;
@@ -29,12 +31,21 @@ public class ShotGunShell : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other){
-        if(other.collider.gameObject.CompareTag("Damageable")){
-            // other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
-            Die();
-        } else if (other.collider.gameObject.CompareTag("Wall")) {
-            Die();
+        if(source.CompareTag("Shotgun")){
+            if(other.collider.gameObject.CompareTag("Damageable")){
+                other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
+                Die();
+            } else if (other.collider.gameObject.CompareTag("Wall")) {
+                Die();
+            }
+        } else {
+            if(other.collider.gameObject.CompareTag("Player")){
+                other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
+                Die();
+            }
         }
+
+
         
     }
 

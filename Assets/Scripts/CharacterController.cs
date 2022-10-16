@@ -27,6 +27,8 @@ public class CharacterController : MonoBehaviour, Damageable
 
     public GameObject Shotgun;
 
+    public int soulCharge;
+
     bool isColliding;
 
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class CharacterController : MonoBehaviour, Damageable
         //animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
-
+        soulCharge = 0;
     }
 
     void FixedUpdate(){
