@@ -26,6 +26,8 @@ public class Door : MonoBehaviour
         } else {
             if(objsInCollider.Count == 0){
                 closed = false;
+            } else {
+                closed = true;
             }
             objsInCollider.Clear();    
             timer = 0.5f;

@@ -106,7 +106,7 @@ MonoBehaviour:
   detectionRadius: 10
   movementInterval: 0.7
   firingInterval: 1.5
-  maxHealth: 3
+  maxHealth: 2
   bulletPrefab: {fileID: 9104393351684010018, guid: a69d9cbc1c69e1840ab11a8f975a4809, type: 3}
   pickupPrefab: {fileID: 810446965838314535, guid: 83f07ec869c6aff42b99498c89fb85da, type: 3}
 --- !u!50 &1794850794682442629

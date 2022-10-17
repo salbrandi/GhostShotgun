@@ -103,7 +103,8 @@ MonoBehaviour:
   startVelocity: 20
   falloff: 2
   timeToLive: 0.25
-  damage: 1
+  damage: 3
+  waitTime: 0
   source: {fileID: 0}
   deathprefab: {fileID: 6344542355690213463, guid: 1c2911b311a13e745addcc9249baf423, type: 3}
 --- !u!50 &1271263690883606080
