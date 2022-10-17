@@ -38,25 +38,42 @@ public class CharacterController : MonoBehaviour, Damageable
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         soulCharge = 0;
+        animator = GetComponentInChildren<Animator>();
     }
 
-    void FixedUpdate(){
-        if(dashCounter > 0 && !isColliding){
+    void FixedUpdate()
+    {
+        if (dashCounter > 0 && !isColliding)
+        {
             rb.MovePosition(rb.position + prevInput * dashSpeed * Time.deltaTime);
         }
 
         if (canMove)
+        {
             rb.MovePosition(rb.position + moveInput * baseSpeed * Time.deltaTime);
+            if (Mathf.Abs(moveInput.y) > Mathf.Abs(moveInput.x) && moveInput.y > 0)
+            {
+                animator.SetBool("Horizontal", false);
+                animator.SetBool("Up", true);
+            }
+            else if (Mathf.Abs(moveInput.y) < Mathf.Abs(moveInput.x))
+            {
+                animator.SetBool("Horizontal", true);
+                animator.SetBool("Up", false);
+            }
+        }
 
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        if(dashCounter > 0){
+    {
+        if (dashCounter > 0)
+        {
             dashCounter -= Time.deltaTime;
 
-            if(dashCounter <= 0){
+            if (dashCounter <= 0)
+            {
                 dashCoolCounter = dashCoolDown;
                 canBeDamaged = true;
                 canMove = true;
@@ -68,7 +85,8 @@ public class CharacterController : MonoBehaviour, Damageable
             }
         }
 
-        if(dashCoolCounter > 0){
+        if (dashCoolCounter > 0)
+        {
             dashCoolCounter -= Time.deltaTime;
         }
 
@@ -78,22 +96,25 @@ public class CharacterController : MonoBehaviour, Damageable
     {
 
         moveInput = val.Get<Vector2>();
-        if (moveInput.magnitude > 0 )
+        if (moveInput.magnitude > 0)
         {
-            if(canMove)
+            if (canMove)
                 prevInput = val.Get<Vector2>();
-                //animator.SetBool("Moving", true);
-                updateFacingDirection();
+            updateFacingDirection();
         }
         else
         {
-            //animator.SetBool("Moving", false);
+            animator.SetBool("Horizontal", false);
+            animator.SetBool("Up", false);
+
         }
-        
+
     }
 
-    void OnDodge(){
-        if((dashCoolCounter <= 0 && dashCounter <= 0 && canMove) || (canMove && dashCounter <= 0 && soulCharge > 0)){
+    void OnDodge()
+    {
+        if ((dashCoolCounter <= 0 && dashCounter <= 0 && canMove) || (canMove && dashCounter <= 0 && soulCharge > 0))
+        {
             dashCounter = dashLength;
             canMove = false;
             canAttack = false;
@@ -105,8 +126,10 @@ public class CharacterController : MonoBehaviour, Damageable
 
     }
 
-    void OnFire(){
-        if (canAttack){
+    void OnFire()
+    {
+        if (canAttack)
+        {
             Shotgun.GetComponent<MouseSwivel>().Fire();
         }
     }
@@ -122,20 +145,23 @@ public class CharacterController : MonoBehaviour, Damageable
         }
     }
 
-    public void TakeDamage(float damage){
+    public void TakeDamage(float damage)
+    {
         Debug.Log("took damage");
         currentHealth -= damage;
     }
 
-    void OnCollisionEnter2D(Collision2D collision){
-        if(collision.collider.gameObject.layer == 6)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == 6)
             isColliding = true;
     }
 
-    void OnCollisionExit2D(Collision2D collision){
+    void OnCollisionExit2D(Collision2D collision)
+    {
         isColliding = false;
     }
 
 
-    
+
 }

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7193730673190514358}
   - component: {fileID: 7193730673190514359}
   - component: {fileID: 7193730673190514357}
-  - component: {fileID: 7193730673190514356}
   - component: {fileID: 2443276330247631971}
+  - component: {fileID: 4146574445080930235}
   m_Layer: 6
   m_Name: barrel
   m_TagString: Wall
@@ -108,22 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &7193730673190514356
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7193730673190514361}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.10000002
 --- !u!114 &2443276330247631971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +139,19 @@ MonoBehaviour:
   m_ShapePathHash: -2002954577
   m_Mesh: {fileID: 0}
   m_InstanceId: -5442
+--- !u!70 &4146574445080930235
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7193730673190514361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.6, y: 1.6}
+  m_Direction: 0
