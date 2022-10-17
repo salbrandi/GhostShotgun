@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShotGunShell : MonoBehaviour
 {
-    public float startVelocity, falloff, timeToLive, damage;
+    public float startVelocity, falloff, timeToLive, damage, waitTime;
 
     public GameObject source, deathprefab;
 
@@ -21,36 +21,56 @@ public class ShotGunShell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0){
+        if (waitTime > 0)
+        {
+            waitTime -= Time.deltaTime;
+            return;
+        }
+        if (timer > 0)
+        {
             timer -= Time.deltaTime;
             transform.position += transform.TransformDirection(Vector3.left) * Time.deltaTime * startVelocity;
             startVelocity = Mathf.Lerp(startVelocity, 0, falloff * Time.deltaTime);
-        } else {
+        }
+        else
+        {
             Die();
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other){
-        if(source.CompareTag("Shotgun")){
-            if(other.collider.gameObject.CompareTag("Damageable")){
-                other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
-                Die();
-            } else if (other.collider.gameObject.CompareTag("Wall")) {
-                Die();
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (source != null)
+        {
+            if (source.CompareTag("Shotgun"))
+            {
+                if (other.collider.gameObject.CompareTag("Damageable"))
+                {
+                    other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
+                    Die();
+                }
+                else if (other.collider.gameObject.CompareTag("Wall"))
+                {
+                    Die();
+                }
             }
-        } else {
-            if(other.collider.gameObject.CompareTag("Player")){
+        }
+        else
+        {
+            if (other.collider.gameObject.CompareTag("Player"))
+            {
                 other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
                 Die();
             }
         }
 
 
-        
+
     }
 
-    void Die(){
-        if(deathprefab != null)
+    void Die()
+    {
+        if (deathprefab != null)
             Instantiate(deathprefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

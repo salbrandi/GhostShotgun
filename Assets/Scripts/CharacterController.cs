@@ -31,6 +31,8 @@ public class CharacterController : MonoBehaviour, Damageable
 
     bool isColliding;
 
+    public bool won = false;
+
     // Start is called before the first frame update
     void Start()
     {

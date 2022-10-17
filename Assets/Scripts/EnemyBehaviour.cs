@@ -75,8 +75,6 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
                 {
                     Vector2 playerLine = Player.transform.position - transform.position;
                     var hit = Physics2D.Raycast(transform.position, playerLine, 100f, LayerMask.GetMask("Wall", "Player"));
-                    Debug.DrawRay(transform.position, playerLine);
-                    Debug.Log(hit.collider.gameObject);
                     if (hit.collider.gameObject.CompareTag("Player"))
                     {
                         animator.SetTrigger("Attacking");
