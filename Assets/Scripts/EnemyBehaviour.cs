@@ -96,6 +96,7 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
     {
         moveTimer = movementInterval;
         prevDirection = targetPos;
+        
     }
 
     void Fire(float angle)
