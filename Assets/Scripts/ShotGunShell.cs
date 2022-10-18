@@ -40,6 +40,12 @@ public class ShotGunShell : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+
+        if (other.collider.gameObject.CompareTag("Wall"))
+        {
+            Die();
+        }
+
         if (source != null)
         {
             if (source.CompareTag("Shotgun"))
@@ -48,10 +54,6 @@ public class ShotGunShell : MonoBehaviour
                 {
                     other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
                     other.collider.gameObject.GetComponent<EnemyBehaviour>()?.SetLastDamageSource(this.transform.position);
-                    Die();
-                }
-                else if (other.collider.gameObject.CompareTag("Wall"))
-                {
                     Die();
                 }
             }

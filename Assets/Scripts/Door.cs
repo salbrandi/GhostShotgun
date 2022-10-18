@@ -13,6 +13,8 @@ public class Door : MonoBehaviour
     bool closed = false;
 
     float timer = 0.5f;
+
+    bool playerHasEntered = false;
     
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class Door : MonoBehaviour
         } else {
             if(objsInCollider.Count == 0){
                 closed = false;
-            } else {
+            } else if(playerHasEntered) {
                 closed = true;
             }
             objsInCollider.Clear();    
@@ -40,7 +42,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.CompareTag("Player")){
-            closed = true;
+            playerHasEntered = true;
         }
     }
 
