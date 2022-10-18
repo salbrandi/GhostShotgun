@@ -79,6 +79,6 @@ MonoBehaviour:
   closedRooms: {fileID: 2008455039814882975, guid: 0e4bcff6355222d45b85371edd612c02, type: 3}
   rooms: []
   waitTime: 5
-  boss: {fileID: 1794850794682442633, guid: 51802a6ca8f44cc40952a994413e2a83, type: 3}
+  boss: {fileID: 6430895101397013498, guid: c63c8c5a6b0bc9a47a14de50c6bd4237, type: 3}
   furthestRoom: {x: 0, y: 0, z: 0}
   startRoom: {fileID: 7539774804236722040, guid: 1bf6333c8d5fac44eb5edfc68c3b7480, type: 3}
