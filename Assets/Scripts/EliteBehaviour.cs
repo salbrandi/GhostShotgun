@@ -39,8 +39,8 @@ public class EliteBehaviour : MonoBehaviour, Damageable
     {
 
         Vector2 playerLine = Player.transform.position - transform.position;
-        var hit = Physics2D.Raycast(transform.position, playerLine, 20f, LayerMask.GetMask("Wall", "Player"));
-        if (!hit.collider.gameObject.CompareTag("Player")) return;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, playerLine, 20f, LayerMask.GetMask("Wall", "Player"));
+        if (hit.collider == null || (!hit.collider.gameObject.CompareTag("Player"))) return;
 
 
         if(currentHealth <= 0){

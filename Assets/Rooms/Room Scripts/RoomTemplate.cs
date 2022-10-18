@@ -18,6 +18,11 @@ public class RoomTemplate : MonoBehaviour
     public GameObject boss;
     public Vector3 furthestRoom;
     public GameObject startRoom;
+
+    void Awake(){
+        furthestRoom = startRoom.transform.position;
+    }
+
     private void Update()
     {
         if(waitTime <= 0 && spawnedBoss == false)
