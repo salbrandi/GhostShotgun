@@ -27,17 +27,22 @@ public class RoomTemplate : MonoBehaviour
     {
         if(waitTime <= 0 && spawnedBoss == false)
         {
-            foreach(GameObject o in rooms)
-            {
-                if (Vector3.Distance(o.transform.position, startRoom.transform.position) > Vector3.Distance(furthestRoom, startRoom.transform.position))
-                {
-                    furthestRoom = o.transform.position;
-                }
-                    
-            }
-            Instantiate(boss, furthestRoom, Quaternion.identity);
+           
+            ///<summary>
+            ///foreach(GameObject o in rooms)
+            ///{
+            ///  if (Vector3.Distance(o.transform.position, startRoom.transform.position) > Vector3.Distance(furthestRoom, startRoom.transform.position))
+            ///{
+            ///    furthestRoom = o.transform.position;
+            ///}
+            ///     
+            ///}
+            ///Instantiate(boss, furthestRoom, Quaternion.identity);
+            ///
+            ///</summary>
+            ///
             spawnedBoss = true;
-
+            Instantiate(boss, rooms[rooms.Count - 1].transform.position, Quaternion.identity);
         }
         else
         {
