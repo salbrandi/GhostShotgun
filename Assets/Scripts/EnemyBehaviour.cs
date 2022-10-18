@@ -9,12 +9,16 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
     float moveTimer, fireTimer, currentHealth;
     Vector2 targetPos;
     Vector2 prevDirection;
-
+    Vector3 lastDamageSource;
     Animator animator;
 
     public GameObject bulletPrefab, pickupPrefab;
 
     Rigidbody2D rb;
+
+    public void SetLastDamageSource(Vector3 v){
+        lastDamageSource = v;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +60,7 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
     void Update()
     {
         if(currentHealth <= 0){
+            rb.AddForce((transform.position - lastDamageSource).normalized * 10, ForceMode2D.Impulse);
             animator.SetBool("Dying", true);
         }
 

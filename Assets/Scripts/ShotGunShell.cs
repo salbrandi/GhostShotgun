@@ -47,6 +47,7 @@ public class ShotGunShell : MonoBehaviour
                 if (other.collider.gameObject.CompareTag("Damageable"))
                 {
                     other.collider.gameObject.GetComponentInChildren<Damageable>().TakeDamage(damage);
+                    other.collider.gameObject.GetComponent<EnemyBehaviour>()?.SetLastDamageSource(this.transform.position);
                     Die();
                 }
                 else if (other.collider.gameObject.CompareTag("Wall"))
