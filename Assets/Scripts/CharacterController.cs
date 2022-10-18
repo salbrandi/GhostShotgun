@@ -199,7 +199,7 @@ public class CharacterController : MonoBehaviour, Damageable
 
     public void Restart(){
         winScreen.SetActive(false);
-        SceneManager.LoadScene("FinalGame");
+        SceneManager.LoadScene(0);
     }
 
 

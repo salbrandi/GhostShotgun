@@ -46,7 +46,6 @@ public class Door : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.CompareTag("Damageable")){
-            Debug.Log(other.gameObject);
             objsInCollider.Add(other.gameObject);
         }
 

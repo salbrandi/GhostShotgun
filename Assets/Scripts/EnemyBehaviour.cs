@@ -79,7 +79,7 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
                     {
                         animator.SetTrigger("Attacking");
                         var audio = GetComponent<AudioSource>();
-                        audio.PlayOneShot(audio.clip, 0.5f);
+                        audio.PlayOneShot(audio.clip, 0.1f);
                         Fire(Mathf.Atan2(playerLine.y, playerLine.x) * Mathf.Rad2Deg);
                         fireTimer = firingInterval;
                     }
