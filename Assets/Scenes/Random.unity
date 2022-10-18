@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6654745602968539522, guid: 81e44ef493a23dc40a7b9de7974c7810, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6654745602968539523, guid: 81e44ef493a23dc40a7b9de7974c7810, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -187,6 +191,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6311941673226901434, guid: 1bf6333c8d5fac44eb5edfc68c3b7480, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311941673226901434, guid: 1bf6333c8d5fac44eb5edfc68c3b7480, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311941673226901434, guid: 1bf6333c8d5fac44eb5edfc68c3b7480, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7539774804236722040, guid: 1bf6333c8d5fac44eb5edfc68c3b7480, type: 3}
       propertyPath: m_Name
       value: Start Room
