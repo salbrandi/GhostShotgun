@@ -109,7 +109,7 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
     void Fire(float angle)
     {
         var obj = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0f, 0f, angle + 180f));
-        obj.GetComponent<ShotGunShell>().source = gameObject;
+        // obj.GetComponent<ShotGunShell>().source = gameObject;
 
     }
 
