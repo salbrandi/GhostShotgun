@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour, Damageable
 {
@@ -32,6 +33,8 @@ public class CharacterController : MonoBehaviour, Damageable
     bool isColliding;
 
     public bool won = false;
+
+    public GameObject winScreen, lossScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -70,12 +73,25 @@ public class CharacterController : MonoBehaviour, Damageable
     // Update is called once per frame
     void Update()
     {
+        if(won){
+            winScreen.SetActive(true);
+            animator.SetBool("Won", true);
+            moveInput = Vector3.zero;
+            return;
+        }
+
+        if(currentHealth <= 0 && !won){
+            lossScreen.SetActive(true);
+            return;
+        }
+
         if (dashCounter > 0)
         {
             dashCounter -= Time.deltaTime;
 
             if (dashCounter <= 0)
             {
+                // Dash is over
                 dashCoolCounter = dashCoolDown;
                 canBeDamaged = true;
                 canMove = true;
@@ -83,6 +99,8 @@ public class CharacterController : MonoBehaviour, Damageable
                 Physics2D.IgnoreLayerCollision(7, 10, false);
                 Shotgun.GetComponent<MouseSwivel>().dashFire(soulCharge);
                 soulCharge = 0;
+                animator.SetBool("Dashing", false);
+
 
             }
         }
@@ -122,7 +140,7 @@ public class CharacterController : MonoBehaviour, Damageable
             canAttack = false;
             canBeDamaged = false;
             // Ignore Layer collision between player and bullets
-            // animator.setTriger("Dodging");
+            animator.SetBool("Dashing", true);
             Physics2D.IgnoreLayerCollision(7, 10);
         }
 
@@ -149,7 +167,7 @@ public class CharacterController : MonoBehaviour, Damageable
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("took damage");
+        animator.SetTrigger("Hurt");
         currentHealth -= damage;
     }
 
@@ -162,6 +180,10 @@ public class CharacterController : MonoBehaviour, Damageable
     void OnCollisionExit2D(Collision2D collision)
     {
         isColliding = false;
+    }
+
+    public void Restart(){
+        SceneManager.LoadScene("FinalGame");
     }
 
 

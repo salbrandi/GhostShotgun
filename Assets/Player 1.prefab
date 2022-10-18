@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Follow: {fileID: 6396215047008965131}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 5
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003610960b2ab5941a5e9307c0900b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 5
+  currentHealth: 5
   canMove: 1
   canAttack: 1
   canBeDamaged: 1
@@ -487,6 +487,9 @@ MonoBehaviour:
   dashLength: 0.2
   Shotgun: {fileID: 0}
   soulCharge: 0
+  won: 0
+  winScreen: {fileID: 0}
+  lossScreen: {fileID: 0}
 --- !u!114 &6396215047008965142
 MonoBehaviour:
   m_ObjectHideFlags: 0
