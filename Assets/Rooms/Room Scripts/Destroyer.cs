@@ -11,11 +11,12 @@ public class Destroyer : MonoBehaviour
     {
         Destroy(other.gameObject);
         deleted = true;
+        Invoke("SelfDistruct", 0.4f);
+       
+    }
+    void SelfDistruct()
+    {
         if(deleted = true)
-        {
-            Destroy(startPoint);
-            deleted = false;
-        }
-
+            Destroy(gameObject);
     }
 }
