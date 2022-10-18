@@ -25,7 +25,7 @@ public class EliteBehaviour : MonoBehaviour, Damageable
     bool spawned = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();

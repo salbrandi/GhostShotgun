@@ -90,6 +90,7 @@ public class CharacterController : MonoBehaviour, Damageable
 
         if(currentHealth <= 0 && !won){
             lossScreen.SetActive(true);
+            Time.timeScale = 0.1f;
             return;
         }
 

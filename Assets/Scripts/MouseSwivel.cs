@@ -39,7 +39,7 @@ public class MouseSwivel : MonoBehaviour
             obj.GetComponent<ShotGunShell>().source = gameObject;
         }
         Vector3 kickback = new Vector3(0.5f, 0.2f, 0);
-        transform.localPosition = transform.position + kickback;
+        transform.position = transform.position + kickback;
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var angle = mouseWorldPos - objectToFollow.transform.position;
         GetComponent<CinemachineImpulseSource>().GenerateImpulseWithVelocity(angle.normalized);
