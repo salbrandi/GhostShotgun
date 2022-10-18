@@ -13,8 +13,8 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     private bool spawned = false;
     public GameObject destroyerBlock;
-    private float waitTimeSpawner = 5f;
-    private float waitTimeDestroyer = 7f;
+    private float waitTimeSpawner = 4f;
+    private float waitTimeDestroyer = 0f;
     void Start()
     {
         Destroy(gameObject, waitTimeSpawner);
