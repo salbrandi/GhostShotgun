@@ -10,10 +10,12 @@ public class CharacterController : MonoBehaviour, Damageable
     private Rigidbody2D rb;
 
     public float maxHealth = 10f;
-    public float currentHealth;
+    public float currentHealth, fireInterval;
     public bool canMove = true;
     public bool canAttack = true;
     public bool canBeDamaged = true;
+
+    public AudioSource shotgunSound, hurtSound;
 
     private Animator animator { get; set; }
 
@@ -35,6 +37,7 @@ public class CharacterController : MonoBehaviour, Damageable
     public bool won = false;
 
     public GameObject winScreen, lossScreen;
+    float fireTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,7 @@ public class CharacterController : MonoBehaviour, Damageable
         currentHealth = maxHealth;
         soulCharge = 0;
         animator = GetComponentInChildren<Animator>();
+        fireTimer = fireInterval;
     }
 
     void FixedUpdate()
@@ -52,6 +56,7 @@ public class CharacterController : MonoBehaviour, Damageable
         {
             rb.MovePosition(rb.position + prevInput * dashSpeed * Time.deltaTime);
         }
+
 
         if (canMove)
         {
@@ -73,6 +78,9 @@ public class CharacterController : MonoBehaviour, Damageable
     // Update is called once per frame
     void Update()
     {
+
+
+
         if(won){
             winScreen.SetActive(true);
             animator.SetBool("Won", true);
@@ -83,6 +91,10 @@ public class CharacterController : MonoBehaviour, Damageable
         if(currentHealth <= 0 && !won){
             lossScreen.SetActive(true);
             return;
+        }
+
+        if(fireTimer > 0){
+            fireTimer -= Time.deltaTime;
         }
 
         if (dashCounter > 0)
@@ -148,9 +160,11 @@ public class CharacterController : MonoBehaviour, Damageable
 
     void OnFire()
     {
-        if (canAttack)
+        if (canAttack && fireTimer <= 0)
         {
+            shotgunSound.PlayOneShot(shotgunSound.clip, 0.5f);
             Shotgun.GetComponent<MouseSwivel>().Fire();
+            fireTimer = fireInterval;
         }
     }
 
@@ -167,6 +181,7 @@ public class CharacterController : MonoBehaviour, Damageable
 
     public void TakeDamage(float damage)
     {
+        hurtSound.PlayOneShot(hurtSound.clip, 0.5f);
         animator.SetTrigger("Hurt");
         currentHealth -= damage;
     }
@@ -183,6 +198,7 @@ public class CharacterController : MonoBehaviour, Damageable
     }
 
     public void Restart(){
+        winScreen.SetActive(false);
         SceneManager.LoadScene("FinalGame");
     }
 

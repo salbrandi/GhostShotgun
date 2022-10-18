@@ -78,6 +78,8 @@ public class EnemyBehaviour : MonoBehaviour, Damageable
                     if (hit.collider.gameObject.CompareTag("Player"))
                     {
                         animator.SetTrigger("Attacking");
+                        var audio = GetComponent<AudioSource>();
+                        audio.PlayOneShot(audio.clip, 0.5f);
                         Fire(Mathf.Atan2(playerLine.y, playerLine.x) * Mathf.Rad2Deg);
                         fireTimer = firingInterval;
                     }
