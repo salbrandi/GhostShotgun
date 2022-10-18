@@ -1783,7 +1783,10 @@ Transform:
   - {fileID: 1376742879552228261}
   - {fileID: 2952878410121684109}
   - {fileID: 3367539844927244364}
+<<<<<<< HEAD
   - {fileID: 2607318404646187954}
+=======
+>>>>>>> 0cea0213b080fec6e2c352eed17ce712da96c000
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4402,6 +4405,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!50 &4650225136520553862
 Rigidbody2D:
   serializedVersion: 4
@@ -4523,6 +4527,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 331182150745939918, guid: f6ccf54df757e3344acc85b3630161e3, type: 3}
   m_PrefabInstance: {fileID: 2357518058801556604}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> 0cea0213b080fec6e2c352eed17ce712da96c000
 --- !u!1001 &3914596661472734152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4536,7 +4542,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1676671723, guid: 51802a6ca8f44cc40952a994413e2a83, type: 3}
       propertyPath: m_InstanceId
+<<<<<<< HEAD
       value: -69558
+=======
+      value: -2665034
+>>>>>>> 0cea0213b080fec6e2c352eed17ce712da96c000
       objectReference: {fileID: 0}
     - target: {fileID: 1794850794682442628, guid: 51802a6ca8f44cc40952a994413e2a83, type: 3}
       propertyPath: m_RootOrder
@@ -4618,7 +4628,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2443276330247631971, guid: 3467c97f20fc0e2439edff720cb25e43, type: 3}
       propertyPath: m_InstanceId
+<<<<<<< HEAD
       value: -69572
+=======
+      value: -2665046
+>>>>>>> 0cea0213b080fec6e2c352eed17ce712da96c000
       objectReference: {fileID: 0}
     - target: {fileID: 7193730673190514358, guid: 3467c97f20fc0e2439edff720cb25e43, type: 3}
       propertyPath: m_RootOrder
@@ -4700,7 +4714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2443276330247631971, guid: 3467c97f20fc0e2439edff720cb25e43, type: 3}
       propertyPath: m_InstanceId
+<<<<<<< HEAD
       value: -69582
+=======
+      value: -2665064
+>>>>>>> 0cea0213b080fec6e2c352eed17ce712da96c000
       objectReference: {fileID: 0}
     - target: {fileID: 7193730673190514358, guid: 3467c97f20fc0e2439edff720cb25e43, type: 3}
       propertyPath: m_RootOrder

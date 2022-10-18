@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6221661684093685442}
   - component: {fileID: 6221661684093685443}
   - component: {fileID: 6221661684093685440}
+  - component: {fileID: 269533107}
   m_Layer: 0
   m_Name: door (1)
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6221661684093685446}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 2.1, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.2587}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,6 +134,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &269533107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221661684093685446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000006125eac2
+  m_ShapePath:
+  - {x: -0.80000114, y: -0.8000002, z: 0}
+  - {x: -0.80000114, y: 0.8000002, z: 0}
+  - {x: 0.79999924, y: 0.8000002, z: 0}
+  - {x: 0.79999924, y: -0.8000002, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -2755100
 --- !u!1 &6221661684464885994
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +173,7 @@ GameObject:
   - component: {fileID: 6221661684464885990}
   - component: {fileID: 6221661684464885991}
   - component: {fileID: 6221661684464885988}
+  - component: {fileID: 269533108}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -266,6 +295,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &269533108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221661684464885994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000006125eac2
+  m_ShapePath:
+  - {x: -0.80000114, y: -0.79999924, z: 0}
+  - {x: -0.80000114, y: 0.8000002, z: 0}
+  - {x: 0.79999924, y: 0.8000002, z: 0}
+  - {x: 0.79999924, y: -0.79999924, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -2755096
 --- !u!1 &6221661684731841876
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +347,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6221661684731841876}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -300,7 +356,7 @@ Transform:
   - {fileID: 6221661684955839402}
   m_Father: {fileID: 6221661686201066359}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!61 &6221661684731841878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -353,6 +409,7 @@ GameObject:
   - component: {fileID: 6221661684902716790}
   - component: {fileID: 6221661684902716791}
   - component: {fileID: 6221661684902716788}
+  - component: {fileID: 269533106}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -474,6 +531,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &269533106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221661684902716794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000006125eac2
+  m_ShapePath:
+  - {x: 0.80000114, y: -0.79999924, z: 0}
+  - {x: 0.80000114, y: 0.8000002, z: 0}
+  - {x: -0.79999924, y: 0.8000002, z: 0}
+  - {x: -0.79999924, y: -0.79999924, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -2755104
 --- !u!1 &6221661684955839403
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +570,7 @@ GameObject:
   - component: {fileID: 6221661684955839399}
   - component: {fileID: 6221661684955839396}
   - component: {fileID: 6221661684955839397}
+  - component: {fileID: 269533105}
   m_Layer: 0
   m_Name: door (1)
   m_TagString: Untagged
@@ -501,7 +586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6221661684955839403}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.2587}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -607,6 +692,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &269533105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221661684955839403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000006125eac2
+  m_ShapePath:
+  - {x: 0.80000114, y: -0.8000002, z: 0}
+  - {x: 0.80000114, y: 0.8000002, z: 0}
+  - {x: -0.79999924, y: 0.8000002, z: 0}
+  - {x: -0.79999924, y: -0.8000002, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -2755108
 --- !u!1 &6221661685560952773
 GameObject:
   m_ObjectHideFlags: 0
