@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomRooms:
-  - {fileID: 2872469910900138668, guid: 63ca05ef857e8bc4991cb8c22f20576a, type: 3}
+  - {fileID: 2872469910900138668, guid: dcc69a68f6d672943bfae5da90b77d90, type: 3}
   - {fileID: 4974879577103943174, guid: 175cfff474fd4c14596058edc41f1c8b, type: 3}
   - {fileID: 8733379542683246331, guid: 666c7bc51072ceb42a336caed0e794a7, type: 3}
   - {fileID: 1020651589696419518, guid: 4caa1b73def4fde488d5d7a979e5cab5, type: 3}
