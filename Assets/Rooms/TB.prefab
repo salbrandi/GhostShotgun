@@ -292,7 +292,7 @@ Transform:
   m_GameObject: {fileID: 1020651589696419518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13, y: 27, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4794513669332343253}
@@ -3951,6 +3951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
+  waitTime: 4
 --- !u!61 &7568481047428396142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4374,6 +4375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 2
+  waitTime: 4
 --- !u!61 &1539183478227952172
 BoxCollider2D:
   m_ObjectHideFlags: 0
